@@ -20,6 +20,13 @@
                         </div>
                     </div>
                 </c:if>
+                <c:if test="${param.errorUsernameExists != null}">
+                    <div class="card w-100">
+                        <div class="card-body text-danger">
+                            Username already exists
+                        </div>
+                    </div>
+                </c:if>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
             <div class="form-group">
@@ -28,6 +35,13 @@
                     <div class="card w-100">
                         <div class="card-body text-danger">
                             Please enter an email
+                        </div>
+                    </div>
+                </c:if>
+                <c:if test="${param.errorEmailExists != null}">
+                    <div class="card w-100">
+                        <div class="card-body text-danger">
+                            Account already attached to email entered
                         </div>
                     </div>
                 </c:if>
