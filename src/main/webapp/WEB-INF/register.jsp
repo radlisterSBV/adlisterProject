@@ -14,9 +14,16 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <c:if test="${param.errorUsernameEmpty != null}">
-                    <div class="card w-75">
+                    <div class="card w-100">
                         <div class="card-body text-danger">
                             Please enter a username
+                        </div>
+                    </div>
+                </c:if>
+                <c:if test="${param.errorUsernameExists != null}">
+                    <div class="card w-100">
+                        <div class="card-body text-danger">
+                            Username already exists
                         </div>
                     </div>
                 </c:if>
@@ -25,9 +32,16 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <c:if test="${param.errorEmailEmpty != null}">
-                    <div class="card w-75">
+                    <div class="card w-100">
                         <div class="card-body text-danger">
                             Please enter an email
+                        </div>
+                    </div>
+                </c:if>
+                <c:if test="${param.errorEmailExists != null}">
+                    <div class="card w-100">
+                        <div class="card-body text-danger">
+                            Account already attached to email entered
                         </div>
                     </div>
                 </c:if>
@@ -36,7 +50,7 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <c:if test="${param.errorPasswordIssue != null}">
-                    <div class="card w-75">
+                    <div class="card w-100">
                         <div class="card-body text-danger">
                             There was an issue with your password. Please try again.
                         </div>
