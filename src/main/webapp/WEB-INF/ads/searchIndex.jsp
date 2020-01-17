@@ -10,7 +10,19 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <h1>Here Are all the ads!</h1>
 <div class="container">
-    <h1>hey</h1>
+   <c:forEach var="ad" items="${searchResults}">
+       <a href="#" class="">
+                           <div class="card" style="width: 18rem;">
+                               <img src="..." class="card-img-top" alt="...">
+                               <div class="card-body">
+                                   <h4><c:out value="${ad.title}"/></h4>
+                                   <p class="card-text"><c:out value="${ad.description}"/></p>
+                               </div>
+                           </div>
+                       </a>
+
+
+   </c:forEach>
 <%--    <c:out value="${searchBar}">--%>
 <%--        <a href="#" class="">--%>
 <%--            <div class="card" style="width: 18rem;">--%>
@@ -21,7 +33,7 @@
 <%--                </div>--%>
 <%--            </div>--%>
 <%--        </a>--%>
-    </c:out>
+<%--    </c:out>--%>
 </div>
 
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />

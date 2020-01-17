@@ -7,7 +7,8 @@
 --%>
 
 <div class="active-cyan-3 active-cyan-4 mb-4">
-    <form>
+    <form method="POST" action="/ads">
     <input class="form-control" type="text" name="searchBar" placeholder="Search" aria-label="Search">
+        <input type="submit" value="Submit">
     </form>
 </div>
