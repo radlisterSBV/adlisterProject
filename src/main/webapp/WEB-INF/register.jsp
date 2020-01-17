@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <c:if test="${param.errorUsernameEmpty != null}">
-                    <div class="card w-75">
+                    <div class="card w-100">
                         <div class="card-body text-danger">
                             Please enter a username
                         </div>
@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <c:if test="${param.errorEmailEmpty != null}">
-                    <div class="card w-75">
+                    <div class="card w-100">
                         <div class="card-body text-danger">
                             Please enter an email
                         </div>
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <c:if test="${param.errorPasswordIssue != null}">
-                    <div class="card w-75">
+                    <div class="card w-100">
                         <div class="card-body text-danger">
                             There was an issue with your password. Please try again.
                         </div>

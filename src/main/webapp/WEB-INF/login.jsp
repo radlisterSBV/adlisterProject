@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,6 +12,13 @@
         <h1>Please Log In</h1>
         <form action="/login" method="POST">
             <div class="form-group">
+                <c:if test="${param.error != null}">
+                    <div class="card w-100">
+                        <div class="card-body text-danger">
+                            Username or password incorrect. Please try again.
+                        </div>
+                    </div>
+                </c:if>
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
