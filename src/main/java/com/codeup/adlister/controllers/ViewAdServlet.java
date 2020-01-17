@@ -19,7 +19,7 @@ public class ViewAdServlet extends HttpServlet {
             throws ServletException, IOException {
 
 
-        request.setAttribute("ad", DaoFactory.getAdsDao().findById(Long.parseLong(request.getParameter("ad_id"))));
+//        request.setAttribute("ad", DaoFactory.getAdsDao().findById(Long.parseLong(request.getParameter("ad_id"))));
         request.getRequestDispatcher("/WEB-INF/single_ad.jsp").forward(request, response);
 
     }
@@ -29,7 +29,7 @@ public class ViewAdServlet extends HttpServlet {
 
 
         String ad_id = request.getParameter("ad_id");
-        request.setAttribute("ad_id", ad_id);
+        request.setAttribute("ad_id", DaoFactory.getAdsDao().findById(Long.parseLong(request.getParameter("ad_id"))));
 
         //null checking
         if (ad_id != null){
