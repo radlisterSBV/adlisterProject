@@ -3,9 +3,6 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +23,21 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public Ad findById(Long id)
+    {
+        String query = "SELECT * from ads WHERE id = ? LIMIT 1";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, String.valueOf(id));
+            return extractAd(stmt.executeQuery());
+        }catch (SQLException e){
+            throw new RuntimeException("Error finding a ad by id", e);
+
+        }
+    }
+
+
     @Override
     public List<Ad> all() {
         PreparedStatement stmt = null;
@@ -37,6 +49,8 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+
+
 
     @Override
     public Long insert(Ad ad) {
@@ -73,4 +87,5 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
 }
