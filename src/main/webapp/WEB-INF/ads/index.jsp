@@ -11,7 +11,9 @@
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
     <h1>Here Are all the ads!</h1>
 <div class="container">
-    <form action="/ad" method="POST">
+    <form action="/ad" method="GET">
+
+        <%--form is looping with data that is not there yet--%>
         <c:forEach var="ad" items="${ads}">
             <a href="#" class="">
                 <div class="card" style="width: 18rem;">
@@ -19,7 +21,6 @@
                     <div class="card-body">
                         <h4><c:out value="${ad.title}"/></h4>
                         <p class="card-text"><c:out value="${ad.description}"/></p>
-                        <c:out value="${ad.id}"/>
                     </div>
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <button type="submit">Click me</button>
