@@ -8,7 +8,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
+<jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
     <h1>Here Are all the ads!</h1>
 <div class="container">
     <c:forEach var="ad" items="${ads}">
