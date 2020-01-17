@@ -11,17 +11,23 @@
 
     <h1>Here Are all the ads!</h1>
 <div class="container">
-    <c:forEach var="ad" items="${ads}">
-        <a href="#" class="">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4><c:out value="${ad.title}"/></h4>
-                <p class="card-text"><c:out value="${ad.description}"/></p>
-            </div>
-        </div>
-        </a>
-    </c:forEach>
+    <form action="/ad" method="POST">
+        <c:forEach var="ad" items="${ads}">
+            <a href="#" class="">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4><c:out value="${ad.title}"/></h4>
+                        <p class="card-text"><c:out value="${ad.description}"/></p>
+                        <c:out value="${ad.id}"/>
+                    </div>
+                    <input type="hidden" name="ad_id" value="${ad.id}">
+                    <button type="submit">Click me</button>
+                </div>
+            </a>
+        </c:forEach>
+    </form>
+
 </div>
 
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />
