@@ -13,12 +13,22 @@
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+<%--        <div class="col-md-6">--%>
+<%--            <h2>${ad.title}</h2>--%>
+<%--            <p></p>--%>
+<%--        </div>--%>
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>${ad.title}</h4>
+                <p class="card-text">${ad.description}</p>
+            </div>
         </div>
     </c:forEach>
 </div>
 
+<jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>
