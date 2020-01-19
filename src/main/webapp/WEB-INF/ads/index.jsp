@@ -21,7 +21,12 @@
                     <div class="card-body">
                         <h4><c:out value="${ad.title}"/></h4>
                         <p class="card-text"><c:out value="${ad.description}"/></p>
+<%--                        IT'S NOT WORKING YET, BUT I WANT TO DISPLAY EACH CATEGORY WITHIN CARD--%>
+                        <c:forEach var="cat" items="${categories}">
+                            <p class="card-text"><c:out value="${cat}"/></p>
+                        </c:forEach>
                     </div>
+
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <button type="submit">Click me</button>
                 </div>

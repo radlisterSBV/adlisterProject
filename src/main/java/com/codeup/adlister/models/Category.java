@@ -1,3 +1,12 @@
+//              ****************************************************************
+//                  i'm thinking we don't need category table, like andrew said
+//                  we just display categories checkboxes,
+//                  and add whichever is checked to array list
+//                  then just add that arraylist as an object to the ad object.
+//              ****************************************************************
+
+
+
 package com.codeup.adlister.models;
 
 public class Category {
@@ -14,6 +23,9 @@ public class Category {
     }
 
     public Category() {
+    }
+
+    public Category(String[] categories) {
     }
 
     public long getId() {
