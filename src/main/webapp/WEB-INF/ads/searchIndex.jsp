@@ -23,19 +23,6 @@
 
 
    </c:forEach>
-<%--    <c:out value="${searchBar}">--%>
-<%--        <a href="#" class="">--%>
-<%--            <div class="card" style="width: 18rem;">--%>
-<%--                <img src="..." class="card-img-top" alt="...">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h4><c:out value="${searchBar.title}"/></h4>--%>
-<%--                    <p class="card-text"><c:out value="${searchBar.description}"/></p>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </a>--%>
-<%--    </c:out>--%>
-</div>
-
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>
