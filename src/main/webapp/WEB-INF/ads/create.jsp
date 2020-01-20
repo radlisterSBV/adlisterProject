@@ -11,10 +11,10 @@
     <div class="container">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
-            <label>Categories</label><br>
-            <input type="checkbox" name="category" value="cat1"> Category 1
-            <input type="checkbox" name="category" value="cat2"> Category 2
-            <input type="checkbox" name="category" value="cat3"> Category 3
+<%--            <label>Categories</label><br>--%>
+<%--            <input type="checkbox" name="category" value="cat1"> Category 1--%>
+<%--            <input type="checkbox" name="category" value="cat2"> Category 2--%>
+<%--            <input type="checkbox" name="category" value="cat3"> Category 3--%>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input id="title" name="title" class="form-control" type="text">
