@@ -24,7 +24,6 @@
 
                         <p class="card-text"><c:out value="${ad.description}"/></p>
                     </div>
-
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <button type="submit">View Ad</button>
                 </div>

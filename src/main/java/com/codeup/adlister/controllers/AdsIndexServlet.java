@@ -37,7 +37,7 @@ public class AdsIndexServlet extends HttpServlet {
         List<Ad> bucket = new ArrayList<>();
         String searchBar = request.getParameter("searchBar");
         List<Ad> adList = DaoFactory.getAdsDao().all();
-        if (!searchBar.isEmpty()) {
+        if (searchBar != null) {
             for (int i = 0; i < adList.size(); i++) {
                 if (adList.get(i).getTitle().contains(searchBar)) {
                     bucket.add(adList.get(i));

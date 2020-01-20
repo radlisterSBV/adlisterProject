@@ -9,9 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="${ad.title}"/>
     </jsp:include>
+    <script src="https://kit.fontawesome.com/927b51fa66.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
@@ -27,6 +29,10 @@
     <form action="/ad" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
             <button type="submit"><i class="fas fa-trash-alt"></i></button>
+    </form>
+    <form action="/update" method="POST">
+        <input type="hidden" name="ad_id" value="${ad.id}">
+        <button type="submit"><i class="far fa-edit"></i></button>
     </form>
 </div>
 
