@@ -19,12 +19,15 @@ import java.util.List;
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("user") != null) {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
             response.sendRedirect("/login");
             return;
+        } else {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
+            request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+                    .forward(request, response);
         }
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
     }
 
 
@@ -34,11 +37,6 @@ public class CreateAdServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 
 
-    // THIS IS HOW YOU GET THE VALUES FROM THE CHECKBOXES ACCORDING TO INTERNET
-        String[] categories = request.getParameterValues("category");
-        //SETTING ATTRIBUTE FOR USE IN INDEX.JSP
-        request.setAttribute("categories",categories);
-        //NOT ADDING CATEGORIES TO AD, JUST GOING TO DISPLAY CATEGORIES IN JSP
         Ad ad = new Ad(
             user.getId(),
             Long.parseLong(request.getParameter("user_id")),

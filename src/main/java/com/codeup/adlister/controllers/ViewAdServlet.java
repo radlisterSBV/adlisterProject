@@ -17,6 +17,11 @@ public class ViewAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") != null) {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
+        } else {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
+        }
 
 
         request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));

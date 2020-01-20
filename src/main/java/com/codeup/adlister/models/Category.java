@@ -1,9 +1,4 @@
-//              ****************************************************************
-//                  i'm thinking we don't need category table, like andrew said
-//                  we just display categories checkboxes,
-//                  and add whichever is checked to array list
-//                  then just add that arraylist as an object to the ad object.
-//              ****************************************************************
+
 
 
 

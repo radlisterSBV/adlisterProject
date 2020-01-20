@@ -7,7 +7,7 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="${loggedInOut}"/>
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
     <h1>Here Are all the ads!</h1>
 <div class="container">
@@ -23,10 +23,6 @@
                         <h4><c:out value="${ad.title}"/></h4>
 
                         <p class="card-text"><c:out value="${ad.description}"/></p>
-<%--                        IT'S NOT WORKING YET, BUT I WANT TO DISPLAY EACH CATEGORY WITHIN CARD--%>
-                        <c:forEach var="cat" items="${categories}">
-                            <p class="card-text"><c:out value="${cat}"/></p>
-                        </c:forEach>
                     </div>
 
                     <input type="hidden" name="ad_id" value="${ad.id}">
