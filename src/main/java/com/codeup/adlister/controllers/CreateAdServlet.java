@@ -21,12 +21,11 @@ public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
-            response.sendRedirect("/login");
-            return;
-        } else {
-            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
             request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
                     .forward(request, response);
+        } else {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
+            response.sendRedirect("/login");
         }
     }
 
