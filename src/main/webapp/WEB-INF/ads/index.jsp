@@ -32,6 +32,8 @@
     </form>
     </c:forEach>
 
+    <jsp:include page="/WEB-INF/partials/scripts.jsp" />
+
 </div>
 
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />

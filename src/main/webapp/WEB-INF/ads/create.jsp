@@ -29,4 +29,6 @@
         </form>
     </div>
 </body>
+<jsp:include page="/WEB-INF/partials/scripts.jsp" />
+
 </html>
