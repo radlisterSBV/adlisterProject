@@ -13,6 +13,11 @@ import java.io.IOException;
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") != null) {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
+        } else {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
+        }
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 

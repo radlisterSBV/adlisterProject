@@ -7,7 +7,7 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="${loggedInOut}"/>
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
     <h1>Here Are all the ads!</h1>
 <div class="container">
@@ -24,11 +24,11 @@
 
                         <p class="card-text"><c:out value="${ad.description}"/></p>
                     </div>
+
                     <input type="hidden" name="ad_id" value="${ad.id}">
-                    <button type="submit">Click me</button>
+                    <button type="submit">View Ad</button>
                 </div>
             </a>
-
     </form>
     </c:forEach>
 
