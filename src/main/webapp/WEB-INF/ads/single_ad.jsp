@@ -24,7 +24,7 @@
 
                 <p class="card-text"><c:out value="${ad.description}"/></p>
             </div>
-    <form action="/delete" method="POST">
+    <form action="/ad" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
             <button type="submit"><i class="fas fa-trash-alt"></i></button>
     </form>
