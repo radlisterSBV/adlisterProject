@@ -11,15 +11,17 @@
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
     <h1>Here Are all the ads!</h1>
 <div class="container">
-    <form action="/ad" method="GET">
 
-        <%--form is looping with data that is not there yet--%>
-        <c:forEach var="ad" items="${ads}">
+    <c:forEach var="ad" items="${ads}">
+    <form action="/ad" method="GET">
+        <%--form was looping with data that was not there yet--%>
+
             <a href="#" class="">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4><c:out value="${ad.title}"/></h4>
+
                         <p class="card-text"><c:out value="${ad.description}"/></p>
 <%--                        IT'S NOT WORKING YET, BUT I WANT TO DISPLAY EACH CATEGORY WITHIN CARD--%>
                         <c:forEach var="cat" items="${categories}">
@@ -31,8 +33,9 @@
                     <button type="submit">Click me</button>
                 </div>
             </a>
-        </c:forEach>
+
     </form>
+    </c:forEach>
 
 </div>
 
