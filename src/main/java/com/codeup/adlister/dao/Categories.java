@@ -1,3 +1,13 @@
+//              ****************************************************************
+//                  i've tried fiddling with categories to avoid making a table,
+//                  but everything i've found online says i have to make a cat table.
+//                  we do this because you can't store an array of things
+//                  as a single entry in an array. (according to the internet)
+//              ****************************************************************
+
+
+
+
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;

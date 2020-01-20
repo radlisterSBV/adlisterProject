@@ -1,3 +1,7 @@
+
+
+
+
 package com.codeup.adlister.models;
 
 public class Category {
@@ -14,6 +18,9 @@ public class Category {
     }
 
     public Category() {
+    }
+
+    public Category(String[] categories) {
     }
 
     public long getId() {
