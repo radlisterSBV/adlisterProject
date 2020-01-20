@@ -19,10 +19,6 @@
 <div class="container">
     <h1>Here is one ad: </h1>
 
-    <%--made so values pull out of sql--%>
-<%--    <h1>Ad <c:out value="${ad.title}" /></h1>--%>
-<%--    <h1>Description: <c:out value="${ad.description}" /></h1>--%>
-<%--    <h1>Id: <c:out value="${ad.id}" /></h1>--%>
     <a href="#" class="">
         <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
