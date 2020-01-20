@@ -10,7 +10,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads"/>
+        <jsp:param name="title" value="${ad.title}"/>
     </jsp:include>
 </head>
 <body>
@@ -20,12 +20,26 @@
     <h1>Here is one ad: </h1>
 
     <%--made so values pull out of sql--%>
-    <h1>Ad <c:out value="${ad.title}" /></h1>
-    <h1>Description: <c:out value="${ad.description}" /></h1>
-    <h1>Id: <c:out value="${ad.id}" /></h1>
-    <h1>Img here:<c:out value="${ad.img_url}" /> </h1>
+<%--    <h1>Ad <c:out value="${ad.title}" /></h1>--%>
+<%--    <h1>Description: <c:out value="${ad.description}" /></h1>--%>
+<%--    <h1>Id: <c:out value="${ad.id}" /></h1>--%>
+    <a href="#" class="">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4><c:out value="${ad.title}"/></h4>
+
+                <p class="card-text"><c:out value="${ad.description}"/></p>
+            </div>
+            <input type="hidden" name="ad_id" value="${ad.id}">
+            <button type="submit">Click me</button>
+        </div>
+    </a>
+
 
 </div>
 
+
+<jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>
