@@ -18,25 +18,16 @@
 
 <div class="container">
     <h1>Here is one ad: </h1>
-
-    <%--made so values pull out of sql--%>
-<%--    <h1>Ad <c:out value="${ad.title}" /></h1>--%>
-<%--    <h1>Description: <c:out value="${ad.description}" /></h1>--%>
-<%--    <h1>Id: <c:out value="${ad.id}" /></h1>--%>
-    <a href="#" class="">
-        <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h4><c:out value="${ad.title}"/></h4>
 
                 <p class="card-text"><c:out value="${ad.description}"/></p>
             </div>
+    <form action="/delete" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="submit">Click me</button>
-        </div>
-    </a>
-
-
+            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+    </form>
 </div>
 
 
