@@ -21,8 +21,7 @@ public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
-            request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-                    .forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(request, response);
         } else {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
             response.sendRedirect("/login");
@@ -38,7 +37,6 @@ public class CreateAdServlet extends HttpServlet {
 
         Ad ad = new Ad(
             user.getId(),
-            Long.parseLong(request.getParameter("user_id")),
             request.getParameter("title"),
             request.getParameter("description"),
             request.getParameter("url")
@@ -46,4 +44,6 @@ public class CreateAdServlet extends HttpServlet {
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
     }
+
+
 }
