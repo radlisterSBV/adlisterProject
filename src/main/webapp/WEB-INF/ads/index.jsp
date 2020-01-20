@@ -26,10 +26,9 @@
                     </div>
 
                     <input type="hidden" name="ad_id" value="${ad.id}">
-                    <button type="submit">Click me</button>
+                    <button type="submit">View Ad</button>
                 </div>
             </a>
-
     </form>
     </c:forEach>
 
