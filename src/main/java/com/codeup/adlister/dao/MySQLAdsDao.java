@@ -23,19 +23,28 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public Ad findById(Long id)
+
+    @Override
+    public Ad findAdById(Long id)
     {
-        String query = "SELECT * from ads WHERE id = ? LIMIT 1";
+        System.out.println("findadbyid.id = " + id);
 
         try {
+            String query = "SELECT * from ads WHERE id = ? LIMIT 1";
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, id);
+            stmt.setString(1, String.valueOf(id));
             ResultSet rs = stmt.executeQuery();
             rs.next();
-            return extractAd(rs);
-        }catch (SQLException e){
-            throw new RuntimeException("Error finding an ad by id", e);
-
+            //create the entire ad object
+            return new Ad(
+                    rs.getLong("id"),
+                    rs.getLong("user_id"),
+                    rs.getString("title"),
+                    rs.getString("description"),
+                    rs.getString("img_url")
+            );
+        } catch (SQLException e){
+            throw new RuntimeException("Error finding individual ad with ad_id of " + id);
         }
     }
 
@@ -88,6 +97,10 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }
