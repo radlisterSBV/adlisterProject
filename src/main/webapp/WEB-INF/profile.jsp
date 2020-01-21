@@ -13,7 +13,7 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <form action="/profile" method="GET">
+        <form action="/ad" method="POST">
 
 
 <%--        <c:if test="${ad.user_id} == ${sessionScope.user.id}">--%>

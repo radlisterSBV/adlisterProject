@@ -16,31 +16,19 @@ import java.sql.SQLException;
 
 @WebServlet(name="UpdateAdServlet", urlPatterns="/update")
 public class UpdateAdServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        request.getRequestDispatcher("/WEB-INF/ads/updateAd.jsp").forward(request, response);
-    }
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("user");
-////    setting attribute ad based on id passed in updateAd.jsp
-        request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
-        //turning attribute into Ad
-        Ad addly = new Ad(
-1,"yes", "no", "i guess"
-//                request.getParameter("title"),
-//                request.getParameter("description"),
-//                request.getParameter("url")
-        );
-        //passing addly into update function
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        //this may or may not actually get the new parameters and set them into a new ad
+        Ad newAd = new Ad(Long.parseLong(request.getParameter("ad_id")), request.getParameter("title"),request.getParameter("url"), request.getParameter("description"));
         try {
-            DaoFactory.getAdsDao().updateAdById(addly);
+            DaoFactory.getAdsDao().updateAdById(newAd);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
-
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        this successfully handles post request from single ad page
+        request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
         request.getRequestDispatcher("/WEB-INF/ads/updateAd.jsp").forward(request, response);
     }
 }

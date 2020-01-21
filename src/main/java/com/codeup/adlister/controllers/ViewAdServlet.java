@@ -19,20 +19,20 @@ public class ViewAdServlet extends HttpServlet {
             throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
+            request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
+            request.getRequestDispatcher("/WEB-INF/ads/single_ad.jsp").forward(request, response);
         } else {
+            //user is not allowed to edit ads if they are not logged in--
+            //still need to specify that the userId matches the logged in user.
             request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
+            request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
+            request.getRequestDispatcher("/WEB-INF/ads/loggedOutSingleAd.jsp");
         }
-
-
-        request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
-        request.getRequestDispatcher("/WEB-INF/ads/single_ad.jsp").forward(request, response);
-
-
     }
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             long id = Long.parseLong(request.getParameter("ad_id"));
-            DaoFactory.getAdsDao().deleteAd(id);
+//            DaoFactory.getAdsDao().deleteAd(id);
             response.sendRedirect("/ads");
 
         }

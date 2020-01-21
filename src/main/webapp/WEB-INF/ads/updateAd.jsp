@@ -17,23 +17,26 @@
         <%--            <input type="checkbox" name="category" value="cat3"> Category 3--%>
         <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text" value="${ad.title}">
+<%--            each of the attributes are pulling corrrectly--%>
+            <input id="title" name="title" class="form-control" type="text" value="${ad.getTitle()}">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control">description</textarea>
+            <textarea id="description" name="description" class="form-control">${ad.getDescription()}</textarea>
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input id="image" name="url" class="form-control" type="text" value="${ad.url}">
+            <input id="image" name="url" class="form-control" type="text" value="${ad.getUrl()}">
         </div>
             <div class="form-group">
                 <h2></h2>
             </div>
-            <input type="hidden" value="${ad.id}" name="ad_id">
+            <input type="hidden" value="${ad.getId()}" name="ad_id">
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
+
+
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>
