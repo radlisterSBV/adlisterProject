@@ -20,6 +20,14 @@
 
 <div class="container">
     <h1>Here is one ad: </h1>
+
+    <img src="img/lawn_mower.png"  alt="">
+    <div class="card-body">
+        <h4><c:out value="${ad.title}"/></h4>
+        <p class="card-text"><c:out value="${ad.description}"/></p>
+        <p class="card-text"><c:out value="<img src='" + ${ad.url} + "'>"/></p>
+    </div>
+
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h4><c:out value="${ad.title}"/></h4>
@@ -27,6 +35,7 @@
                 <p class="card-text"><c:out value="${ad.url}"/></p>
             </div>
 <c:if test="${ad.getUserId() == user.id}">
+
     <form action="/update" method="GET">
         <input type="hidden" name="ad_id" value="${ad.id}">
         <button type="submit"><i class="far fa-edit"></i></button>
@@ -39,6 +48,6 @@
 </div>
 
 
-<jsp:include page="/WEB-INF/partials/scripts.jsp" />
+<jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>
 </html>
