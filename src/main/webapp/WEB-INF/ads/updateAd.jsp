@@ -21,12 +21,15 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control">${ad.description}</textarea>
+            <textarea id="description" name="description" class="form-control">description</textarea>
         </div>
         <div class="form-group">
             <label for="image">Image</label>
             <input id="image" name="url" class="form-control" type="text" value="${ad.url}">
         </div>
+            <div class="form-group">
+                <h2></h2>
+            </div>
             <input type="hidden" value="${ad.id}" name="ad_id">
         <input type="submit" class="btn btn-block btn-primary">
     </form>
