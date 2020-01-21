@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,9 @@ public class ViewAdServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") != null) {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
             request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
+            Ad ad = (Ad) request.getAttribute("ad");
             request.getRequestDispatcher("/WEB-INF/ads/single_ad.jsp").forward(request, response);
+            request.getSession().setAttribute("ad", ad);
         } else {
             //user is not allowed to edit ads if they are not logged in--
             //still need to specify that the userId matches the logged in user.
