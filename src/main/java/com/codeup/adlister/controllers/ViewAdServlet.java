@@ -36,7 +36,7 @@ public class ViewAdServlet extends HttpServlet {
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //            long id = Long.parseLong(request.getParameter("ad_id"));
 //            DaoFactory.getAdsDao().deleteAd(id);
-//            response.sendRedirect("/ads");
+            request.getRequestDispatcher("/WEB-INF/ads/single_ad.jsp").forward(request,response);
 
         }
     }
