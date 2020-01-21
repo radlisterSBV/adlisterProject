@@ -15,6 +15,9 @@
                 <a class="nav-link" href="/ads/create">Create Ad</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
 <%--            <li class="nav-item">--%>

@@ -27,6 +27,10 @@
                     <button type="submit">View Ad</button>
                 </div>
         </form>
+            <form action="/delete" method="POST">
+                <input type="hidden" name="ad_id" value="${ad.id}">
+                <button type="submit"><i class="fas fa-trash-alt"></i></button>
+            </form>
         </c:if>
     </c:forEach>
     </div>
