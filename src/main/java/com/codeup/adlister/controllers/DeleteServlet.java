@@ -14,7 +14,7 @@ public class DeleteServlet extends HttpServlet {
     //handles post action from single ad servlet delete button
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         long id = Long.parseLong(request.getParameter("ad_id"));
-        response.sendRedirect("/ads");
         DaoFactory.getAdsDao().deleteAd(id);
+        response.sendRedirect("/ads");
     }
 }
