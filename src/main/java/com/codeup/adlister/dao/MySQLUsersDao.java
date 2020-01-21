@@ -73,5 +73,16 @@ public class MySQLUsersDao implements Users {
             rs.getString("password")
         );
     }
+    @Override
+    public void deleteUser(Long id) {
+        try {
+            String insertQuery = "DELETE FROM users WHERE id = ? LIMIT 1";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, String.valueOf(id));
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting user.", e);
+        }
+    }
 
 }
