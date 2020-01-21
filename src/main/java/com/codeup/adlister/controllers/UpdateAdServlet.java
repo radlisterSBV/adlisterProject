@@ -21,16 +21,25 @@ public class UpdateAdServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        this successfully handles post request from single ad page
-        Ad ad = (Ad) request.getSession().getAttribute("ad");
-        Ad newAd = new Ad(Long.parseLong(request.getParameter("ad_id")), request.getParameter("title"),request.getParameter("url"), request.getParameter("description"));
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+        String url = request.getParameter("url");
+        Long id = Long.parseLong(request.getParameter("ad_id"));
+        System.out.println("id = " + id);
+        System.out.println(title + description + url);
+        Ad newAd = new Ad(
+                id, title, description, url
+        );
         try {
             DaoFactory.getAdsDao().updateAdById(newAd);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/profile");
 
-        request.getRequestDispatcher("/WEB-INF/ads/updateAd.jsp").forward(request, response);
-
+//        request.getRequestDispatcher("/WEB-INF/ads/updateAd.jsp").forward(request, response);
+//        DaoFactory.getAdsDao().deleteAd(Long.parseLong(request.getParameter("ad_id")));
+//        DaoFactory.getAdsDao().insert(newAd);
+//        response.sendRedirect("/profile");
     }
 }
