@@ -25,10 +25,10 @@ public class MySQLAdsDao implements Ads {
     }
 
     public void updateAdById(Ad ad) throws SQLException {
-        String query = "UPDATE ads SET title = ?, description = ?, url = ? WHERE id = ?";
+        String query = "UPDATE ads SET title = ?, description = ?, img_url = ? WHERE id = ?";
         PreparedStatement stmt = null;
             stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, "wat");
+            stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
             stmt.setString(3, ad.getUrl());
             stmt.setString(4,String.valueOf(ad.getUserId()));
