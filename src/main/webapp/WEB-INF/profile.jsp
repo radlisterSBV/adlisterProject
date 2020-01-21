@@ -13,7 +13,6 @@
         <h1>Welcome, ${user.username}!</h1>
         <c:forEach var="ad" items="${ads}">
 
-<%--        this isn't working--%>
         <c:if test="${ad.getUserId() == user.id}">
         <form action="/ad" method="POST">
                 <div class="card" style="width: 18rem;">
@@ -34,7 +33,12 @@
         </c:if>
     </c:forEach>
     </div>
-
+    <div>
+        <form action="/deleteUser" method="POST">
+            <input type="hidden" name="userId" value="${user.id}">
+            <button type="submit"><i class="fas fa-trash-alt"></i>DELETE PROFILE</button>
+        </form>
+    </div>
     <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 
 </body>
