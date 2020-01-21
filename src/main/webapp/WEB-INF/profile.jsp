@@ -13,6 +13,9 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
 
     <c:forEach var="ad" items="${ads}">
+        <form action="/profile" method="GET">
+
+
 <%--        <c:if test="${ad.user_id} == ${sessionScope.user.id}">--%>
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
@@ -21,8 +24,11 @@
 
                         <p class="card-text"><c:out value="${ad.description}"/></p>
                     </div>
+                    <input type="hidden" name="ad_id" value="${ad.id}">
+                    <button type="submit">View Ad</button>
                 </div>
 <%--        </c:if>--%>
+        </form>
     </c:forEach>
     </div>
 
