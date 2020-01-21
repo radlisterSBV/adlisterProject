@@ -15,13 +15,6 @@ import java.util.List;
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        if (request.getSession().getAttribute("user") != null) {
-//            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
-//            request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
-//        } else {
-//            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
-//            response.sendRedirect("/login");
-//        }
 
         if (request.getSession().getAttribute("user") != null){
             request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
