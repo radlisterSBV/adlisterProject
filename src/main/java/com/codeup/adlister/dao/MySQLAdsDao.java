@@ -23,7 +23,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
-
     public void updateAdById(Ad ad) throws SQLException {
         String query = "UPDATE ads SET title = ?, description = ?, img_url = ? WHERE id = ?";
         PreparedStatement stmt = null;
@@ -36,9 +35,6 @@ public class MySQLAdsDao implements Ads {
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
         }
-
-
-
     @Override
     public Ad findAdById(Long id)
     {
