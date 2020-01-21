@@ -7,11 +7,11 @@ VALUES ('jacob', 'sdf@sdsdf.com', 'password1'),
        ('christian', 'iieke@sdfi.com','password4');;
 
 INSERT INTO ads(user_id, title, description, img_url)
-VALUES (1,'mow lawn', 'this is an ad','url'),
-       (3,'housekeeping', 'boop', 'url'),
-       (1,'new truck', 'hey', 'url'),
-       (2,'laptop for sale','yes', 'url'),
-       (4,'shirts','no', 'url');
+VALUES (1,'mow lawn', 'this is an ad', LOAD_FILE('C:\\/WEB-INF/img/lawn_mower.png')),
+       (3,'housekeeping', 'boop', LOAD_FILE('/WEB-INF/img/lawn_mower.png')),
+       (1,'new truck', 'hey', LOAD_FILE('/WEB-INF/img/lawn_mower.png')),
+       (2,'laptop for sale','yes', LOAD_FILE('/WEB-INF/img/lawn_mower.png')),
+       (4,'shirts','no', LOAD_FILE('/WEB-INF/img/lawn_mower.png'));
 
 INSERT INTO categories(category)
     VALUES ('services'),
