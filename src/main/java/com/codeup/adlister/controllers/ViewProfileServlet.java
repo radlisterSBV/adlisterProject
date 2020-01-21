@@ -20,9 +20,6 @@ public class ViewProfileServlet extends HttpServlet {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
             request.setAttribute("ads", DaoFactory.getAdsDao().all());
             request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
-//            request.setAttribute("test", (ad.getUserId() == user.getId()));
-
-
         }
         else {
             request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");

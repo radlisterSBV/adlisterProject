@@ -11,10 +11,10 @@
 
     <div class="container">
         <h1>Welcome, ${user.username}!</h1>
-    <c:forEach var="ad" items="${ads}">
+        <c:forEach var="ad" items="${ads}">
 
 <%--        this isn't working--%>
-<%--        <c:if test="${test}">--%>
+        <c:if test="${ad.getUserId() == user.id}">
         <form action="/ad" method="POST">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
@@ -27,7 +27,7 @@
                     <button type="submit">View Ad</button>
                 </div>
         </form>
-<%--        </c:if>--%>
+        </c:if>
     </c:forEach>
     </div>
 
