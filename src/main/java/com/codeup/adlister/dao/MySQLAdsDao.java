@@ -24,12 +24,29 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public void updateAdById(Ad ad) throws SQLException {
+        String query = "DELETE FROM ads WHERE id = ?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, String.valueOf(ad.getId()));
+//            stmt.setString(2, "'no'");
+//            stmt.setString(3, "'wat'");
+//            stmt.setString(4, "1");
+            stmt.executeUpdate();
+            rs = stmt.getGeneratedKeys();
+            rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     @Override
     public Ad findAdById(Long id)
     {
         System.out.println("findadbyid.id = " + id);
-
         try {
             String query = "SELECT * from ads WHERE id = ? LIMIT 1";
             PreparedStatement stmt = connection.prepareStatement(query);
@@ -45,7 +62,6 @@ public class MySQLAdsDao implements Ads {
                     rs.getString("img_url")
             );
         } catch (SQLException e){
-
             throw new RuntimeException("Error finding individual ad with ad_id of " + id);
         }
     }

@@ -7,11 +7,12 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<%--i'm so stuck right here. this causes infinte recursion--%>
+<%--<jsp:include page="${loggedInOut}"/>--%>
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
     </div>
     <jsp:include page="/WEB-INF/partials/scripts.jsp" />
-
 </body>
 </html>
