@@ -10,13 +10,12 @@
     <jsp:include page="/WEB-INF/partials/loggedInNavbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
-
+        <h1>Welcome, ${user.username}!</h1>
     <c:forEach var="ad" items="${ads}">
+
+<%--        this isn't working--%>
+<%--        <c:if test="${test}">--%>
         <form action="/ad" method="POST">
-
-
-<%--        <c:if test="${ad.user_id} == ${sessionScope.user.id}">--%>
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
@@ -27,8 +26,8 @@
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <button type="submit">View Ad</button>
                 </div>
-<%--        </c:if>--%>
         </form>
+<%--        </c:if>--%>
     </c:forEach>
     </div>
 

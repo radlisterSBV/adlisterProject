@@ -17,18 +17,32 @@ import java.sql.SQLException;
 @WebServlet(name="UpdateAdServlet", urlPatterns="/update")
 public class UpdateAdServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        //this may or may not actually get the new parameters and set them into a new ad
         Ad newAd = new Ad(Long.parseLong(request.getParameter("ad_id")), request.getParameter("title"),request.getParameter("url"), request.getParameter("description"));
         try {
             DaoFactory.getAdsDao().updateAdById(newAd);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        request.getRequestDispatcher("/WEB-INF/ads/updateAd.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        this successfully handles post request from single ad page
         request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
+
+
+
+        //this is not setting newly inputted parameters into ad. it's using old parameters.
+//        Ad newAd = new Ad(Long.parseLong(request.getParameter("ad_id")), "brave new world",request.getParameter("url"), request.getParameter("description"));
+
+
+
+        // update method works!
+//        try {
+//            DaoFactory.getAdsDao().updateAdById(newAd);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
         request.getRequestDispatcher("/WEB-INF/ads/updateAd.jsp").forward(request, response);
     }
 }
