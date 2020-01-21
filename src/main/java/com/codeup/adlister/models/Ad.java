@@ -12,6 +12,8 @@ public class Ad {
     private String url;
 //    Long catId;
 
+    public Ad(){}
+
     public Ad(long id, long userId, String title, String description, String url) {
         this.id = id;
         this.userId = userId;

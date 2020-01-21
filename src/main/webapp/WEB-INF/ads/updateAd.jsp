@@ -29,7 +29,6 @@
             <input id="image" name="url" class="form-control" type="text" value="${ad.getUrl()}">
         </div>
             <div class="form-group">
-                <h2></h2>
             </div>
             <input type="hidden" value="${ad.getId()}" name="ad_id">
         <input type="submit" class="btn btn-block btn-primary">
