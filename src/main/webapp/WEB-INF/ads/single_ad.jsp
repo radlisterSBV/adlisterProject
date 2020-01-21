@@ -26,10 +26,6 @@
                 <p class="card-text"><c:out value="${ad.description}"/></p>
                 <p class="card-text"><c:out value="${ad.url}"/></p>
             </div>
-    <form action="/delete" method="POST">
-            <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="submit"><i class="fas fa-trash-alt"></i></button>
-    </form>
     <form action="/update" method="GET">
         <input type="hidden" name="ad_id" value="${ad.id}">
         <button type="submit"><i class="far fa-edit"></i></button>
