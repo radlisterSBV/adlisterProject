@@ -16,20 +16,35 @@
     <script src="https://kit.fontawesome.com/927b51fa66.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/loggedInNavbar.jsp"/>
 
 <div class="container">
     <h1>Here is one ad: </h1>
+
     <img src="img/lawn_mower.png"  alt="">
     <div class="card-body">
         <h4><c:out value="${ad.title}"/></h4>
         <p class="card-text"><c:out value="${ad.description}"/></p>
         <p class="card-text"><c:out value="<img src='" + ${ad.url} + "'>"/></p>
     </div>
+
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4><c:out value="${ad.title}"/></h4>
+                <p class="card-text"><c:out value="${ad.description}"/></p>
+                <p class="card-text"><c:out value="${ad.url}"/></p>
+            </div>
+<c:if test="${ad.getUserId() == user.id}">
+
     <form action="/update" method="GET">
         <input type="hidden" name="ad_id" value="${ad.id}">
         <button type="submit"><i class="far fa-edit"></i></button>
     </form>
+    <form action="/delete" method="POST">
+        <input type="hidden" name="ad_id" value="${ad.id}">
+        <button type="submit"><i class="fas fa-trash-alt"></i></button>
+    </form>
+</c:if>
 </div>
 
 

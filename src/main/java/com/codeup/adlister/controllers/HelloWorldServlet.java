@@ -15,11 +15,12 @@ import java.io.IOException;
 @WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/")
 public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        if (request.getAttribute("user") != null) {
-//            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
-//        } else {
-//            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
-//        }
-        request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+        User logged = (User) request.getSession().getAttribute("user");
+        if (logged != null) {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
+        } else {
+            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
+        }
+            request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
     }
 }
