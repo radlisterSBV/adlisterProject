@@ -28,7 +28,7 @@ public class UpdateUserServlet extends HttpServlet {
         boolean passwordIssue = password.isEmpty();
 
         if (passwordIssue) {
-            response.sendRedirect("/register?errorPasswordIssue");
+            response.sendRedirect("/updateUser?errorPasswordIssue");
             return;
         }
 
