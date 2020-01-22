@@ -29,7 +29,7 @@ public class ViewAdServlet extends HttpServlet {
             //still need to specify that the userId matches the logged in user.
             request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
             request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
-            request.getRequestDispatcher("/WEB-INF/ads/loggedOutSingleAd.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/ads/loggedOutSingleAd.jsp");
         }
     }
 
