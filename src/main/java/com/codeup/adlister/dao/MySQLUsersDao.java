@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
@@ -83,6 +84,20 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting user.", e);
         }
+    }
+
+    @SuppressWarnings("DuplicatedCode")
+    public void updateUser(User user) throws SQLException {
+        String query = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
+        PreparedStatement stmt = null;
+        stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getEmail());
+        stmt.setString(3, user.getPassword());
+        stmt.setString(4,String.valueOf(user.getId()));
+        stmt.executeUpdate();
+        ResultSet rs = stmt.getGeneratedKeys();
+        rs.next();
     }
 
 }
