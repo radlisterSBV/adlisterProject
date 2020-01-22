@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<jsp:include page="${loggedInOut}"/>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
 
         <img src="../../img/lawn_mower.png"  alt="">

@@ -12,16 +12,14 @@
 <div class="container">
    <c:forEach var="ad" items="${searchResults}">
        <a href="#" class="">
-                           <div class="card" style="width: 18rem;">
-                               <img src="..." class="card-img-top" alt="...">
-                               <div class="card-body">
-                                   <h4><c:out value="${ad.title}"/></h4>
-                                   <p class="card-text"><c:out value="${ad.description}"/></p>
-                               </div>
-                           </div>
-                       </a>
-
-
+           <div class="card" style="width: 18rem;">
+               <img src="..." class="card-img-top" alt="...">
+               <div class="card-body">
+                   <h4><c:out value="${ad.title}"/></h4>
+                   <p class="card-text"><c:out value="${ad.description}"/></p>
+               </div>
+           </div>
+       </a>
    </c:forEach>
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
