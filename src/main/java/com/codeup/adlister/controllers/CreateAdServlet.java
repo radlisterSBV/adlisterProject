@@ -43,15 +43,36 @@ public class CreateAdServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 //        Ad newAd = (Ad) request.getSession().getAttribute("newAd");
 
-        Ad ad = new Ad(
-            user.getId(),
-            request.getParameter("title"),
-            request.getParameter("description"),
-            request.getParameter("url")
-        );
-        DaoFactory.getAdsDao().insert(ad);
+        if(request.getParameter("url") == null || request.getParameter("url").isEmpty())
+        {
+            String defaultUrl = "https://avatars0.githubusercontent.com/u/59981893?s=200&v=4";
+            Ad ad = new Ad(
+                    user.getId(),
+                    request.getParameter("title"),
+                    request.getParameter("description"),
+                    defaultUrl
+            );
+            DaoFactory.getAdsDao().insert(ad);
+            response.sendRedirect("/ads");
+
+            return;
+        } else {
+            Ad ad = new Ad(
+                    user.getId(),
+                    request.getParameter("title"),
+                    request.getParameter("description"),
+                    request.getParameter("url")
+            );
+            DaoFactory.getAdsDao().insert(ad);
+            response.sendRedirect("/ads");
+
+
+        }
+
+
+
+
 //        request.getSession().removeAttribute("newAd");
-        response.sendRedirect("/ads");
     }
 
 
