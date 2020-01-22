@@ -20,21 +20,15 @@
     <c:forEach var="ad" items="${ads}">
 
         <form action="/ad" method="GET">
-
-            <a href="#" class="">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h4><c:out value="${ad.title}"/></h4>
                         <p class="card-text"><c:out value="${ad.description}"/></p>
-                        <img src="<c:url value="${ad.getUrl()}"/>"/>
-
+                        <img src="<c:out value="${ad.getUrl()}"/>"/>
                     </div>
-
-
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <button type="submit">View Ad</button>
                 </div>
-            </a>
         </form>
     </c:forEach>
 
