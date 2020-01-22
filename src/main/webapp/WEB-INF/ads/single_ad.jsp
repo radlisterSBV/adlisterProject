@@ -23,7 +23,6 @@
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
         <h4><c:out value="${ad.title}"/></h4>
         <p class="card-text"><c:out value="${ad.description}"/></p>
-<%--        <p class="card-text"><c:out value="${ad.url}"/></p>--%>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
         <form action="/update" method="GET">
@@ -32,7 +31,33 @@
         </form>
         <form action="/delete" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+
+            <!-- Modal -->
+
+            <button type="button" class="btn btn-black-50" data-toggle="modal" data-target="#deleteSingleAd">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+
+
+            <div class="modal fade" tabindex="-1" role="dialog" id="deleteSingleAd" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete Ad</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Are you sure you want to delete this ad?</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger">DELETE AD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </c:if>
 </div>
