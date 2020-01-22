@@ -7,11 +7,12 @@ VALUES ('jacob', 'sdf@sdsdf.com', 'password1'),
        ('christian', 'iieke@sdfi.com','password4');;
 
 INSERT INTO ads(user_id, title, description, img_url)
-VALUES (1,'mow lawn', 'this is an ad', '/img/lawn_mower.png'),
-       (3,'housekeeping', 'boop', '/img/lawn_mower.png'),
-       (1,'new truck', 'hey', '/img/lawn_mower.png'),
-       (2,'laptop for sale','yes', '/img/lawn_mower.png'),
-       (4,'shirts','no', '/img/lawn_mower.png');
+VALUES (1,'mow lawn', 'this is an ad', 'https://images.unsplash.com/flagged/photo-1573162915835-520ee6d112b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80'),
+       (3,'housekeeping', 'boop', 'https://images.unsplash.com/flagged/photo-1573162915835-520ee6d112b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80'),
+       (1,'new truck', 'hey', 'https://images.unsplash.com/flagged/photo-1573162915835-520ee6d112b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80'),
+       (2,'laptop for sale','yes', 'https://images.unsplash.com/flagged/photo-1573162915835-520ee6d112b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80'),
+       (4,'shirts','no', 'https://images.unsplash.com/flagged/photo-1573162915835-520ee6d112b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80');
+
 
 
 INSERT INTO categories(category)

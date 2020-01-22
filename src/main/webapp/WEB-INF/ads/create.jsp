@@ -23,11 +23,15 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
-            <a href="/ads/img">Upload Image</a>
-        <%--            <div class="form-group">--%>
-        <%--                <label for="image">Image</label>--%>
-        <%--                <input id="image" name="url" class="form-control" type="text">--%>
-        <%--            </div>--%>
+<%--            <a href="/ads/img">Upload Image</a>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="image">Image</label>--%>
+<%--                        <input id="image" name="url" class="form-control" type="text">--%>
+<%--                    </div>--%>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input id="image" type="url" name="url">
+            </div>
 
 
 

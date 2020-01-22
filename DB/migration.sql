@@ -18,12 +18,11 @@ CREATE TABLE ads (
     user_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
     description TEXT NOT NULL,
-    img_url LONGBLOB,
+    img_url VARCHAR(2045),
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
 );
-
 
 
 CREATE TABLE categories (
@@ -38,3 +37,4 @@ CREATE TABLE ad_cat (
     FOREIGN KEY (ad_id) REFERENCES ads(id),
     FOREIGN KEY (cat_id) REFERENCES categories(id)
 );
+
