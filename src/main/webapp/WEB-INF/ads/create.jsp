@@ -23,7 +23,7 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
-
+            <a href="/ads/img">Upload Image</a>
         <%--            <div class="form-group">--%>
         <%--                <label for="image">Image</label>--%>
         <%--                <input id="image" name="url" class="form-control" type="text">--%>
@@ -33,13 +33,7 @@
 
         <input type="submit" class="btn btn-block btn-primary">
     </form>
-    <h3>File Upload:</h3>
-    Select a file to upload: <br />
-    <form action= "/img" method = "POST" enctype = "multipart/form-data">
-        <input type= "file" name = "file" size = "50" />
-        <br />
-        <input type= "submit" value = "Upload File" />
-    </form>
+
 </div>
 </body>
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>

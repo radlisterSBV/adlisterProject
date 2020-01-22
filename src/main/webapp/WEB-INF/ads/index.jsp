@@ -25,15 +25,13 @@
                     <div class="card-body">
                         <h4><c:out value="${ad.title}"/></h4>
                         <p class="card-text"><c:out value="${ad.description}"/></p>
-
                     </div>
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <button type="submit">View Ad</button>
                 </div>
             </a>
     </form>
-
-
+        
     </c:forEach>
 
     <jsp:include page="/WEB-INF/partials/scripts.jsp" />
