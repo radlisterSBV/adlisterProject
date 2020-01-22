@@ -8,33 +8,15 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container">
-    <h1>Create a new Ad</h1>
+<div class="container text-center">
     <form action="/ads/create" method="post">
-        <%--            <label>Categories</label><br>--%>
-        <%--            <input type="checkbox" name="category" value="cat1"> Category 1--%>
-        <%--            <input type="checkbox" name="category" value="cat2"> Category 2--%>
-        <%--            <input type="checkbox" name="category" value="cat3"> Category 3--%>
-        <div class="form-group">
+    <h1>Create a new Ad</h1>
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text">
-        </div>
-        <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
-        </div>
-<%--            <a href="/ads/img">Upload Image</a>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="image">Image</label>--%>
-<%--                        <input id="image" name="url" class="form-control" type="text">--%>
-<%--                    </div>--%>
-            <div class="form-group">
+            <input id="description" name="description" class="form-control" type="text">
                 <label for="image">Image</label>
                 <input id="image" type="url" name="url">
-            </div>
-
-
-
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 

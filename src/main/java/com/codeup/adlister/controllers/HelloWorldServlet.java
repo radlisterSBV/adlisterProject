@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/")
+@WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/home")
 public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User logged = (User) request.getSession().getAttribute("user");
