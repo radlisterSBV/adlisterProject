@@ -27,7 +27,7 @@ public class ViewAdServlet extends HttpServlet {
             //user is not allowed to edit ads if they are not logged in--
             //still need to specify that the userId matches the logged in user.
             request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
-            request.getRequestDispatcher("/WEB-INF/ads/loggedOutSingleAd.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/ads/single_ad.jsp").forward(request,response);
         }
     }
 
