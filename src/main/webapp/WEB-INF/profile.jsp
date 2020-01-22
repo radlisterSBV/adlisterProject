@@ -27,8 +27,31 @@
                 </div>
         </form>
             <form action="/delete" method="POST">
+                <button type="button" class="btn btn-black-50" data-toggle="modal" data-target="#exampleModal1">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Ad</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Are you sure you want to delete this ad?</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-danger">DELETE AD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <input type="hidden" name="ad_id" value="${ad.id}">
-                <button type="submit"><i class="fas fa-trash-alt"></i></button>
             </form>
         </c:if>
     </c:forEach>
@@ -41,8 +64,8 @@
         <form action="/deleteUser" method="POST">
 
             <input type="hidden" name="userId" value="${user.id}">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                <i class="fas fa-trash-alt"></i>DELETE PROFILE
+            <button type="button" class="btn btn-black-50" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-trash-alt"></i> DELETE PROFILE
             </button>
             <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
                 <div class="modal-dialog" role="document">
