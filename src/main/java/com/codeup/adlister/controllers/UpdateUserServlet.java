@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 import static com.codeup.adlister.util.Password.hash;
 
-@WebServlet(name="UpdateAdServlet", urlPatterns="/updateUser")
+@WebServlet(name="UpdateUserServlet", urlPatterns="/updateUser")
 public class UpdateUserServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/ads/updateUser.jsp").forward(request, response);
@@ -33,7 +33,7 @@ public class UpdateUserServlet extends HttpServlet {
         }
 
         User newUser = new User(
-                username, email, password
+                id, username, email, hash(password)
         );
         try {
             DaoFactory.getUsersDao().updateUser(newUser);

@@ -17,8 +17,7 @@
         <%--            <input type="checkbox" name="category" value="cat2"> Category 2--%>
         <%--            <input type="checkbox" name="category" value="cat3"> Category 3--%>
         <div class="form-group">
-            <label for="username">Change Username</label>
-            <input id="username" name="username" class="form-control" type="text" value="${user.username}" required>
+            <input id="username" name="username" class="form-control" type="hidden" value="${user.username}">
         </div>
         <div class="form-group">
             <label for="email">Update Email</label>
