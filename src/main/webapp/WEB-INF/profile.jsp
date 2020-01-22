@@ -34,6 +34,10 @@
     </c:forEach>
     </div>
     <div>
+        <form action="/updateUser" method="GET">
+            <input type="hidden" name="userId" value="${user.id}">
+            <button type="submit"><i class="far fa-edit"></i>UPDATE PROFILE</button>
+        </form>
         <form action="/deleteUser" method="POST">
             <input type="hidden" name="userId" value="${user.id}">
             <button type="submit"><i class="fas fa-trash-alt"></i>DELETE PROFILE</button>
