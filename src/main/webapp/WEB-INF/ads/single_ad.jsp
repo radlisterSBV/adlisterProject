@@ -21,11 +21,11 @@
 <div class="container">
     <h1>Here is one ad: </h1>
 
-    <img src="img/lawn_mower.png"  alt="">
+<%--    <img src="img/lawn_mower.png"  alt="">--%>
     <div class="card-body">
         <h4><c:out value="${ad.title}"/></h4>
         <p class="card-text"><c:out value="${ad.description}"/></p>
-        <p class="card-text"><c:out value="<img src='" + ${ad.url} + "'>"/></p>
+<%--        <p class="card-text"><c:out value="<img src='" + ${ad.url} + "'>"/></p>--%>
     </div>
 
             <img src="..." class="card-img-top" alt="...">
