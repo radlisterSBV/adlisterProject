@@ -15,11 +15,6 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
-            request.setAttribute("loggedInOut", "/WEB-INF/partials/loggedInNavbar.jsp");
-        } else {
-            request.setAttribute("loggedInOut", "/WEB-INF/partials/navbar.jsp");
-        }
-        if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
             return;
         }

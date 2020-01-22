@@ -16,7 +16,7 @@
     <script src="https://kit.fontawesome.com/927b51fa66.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
     <h1>Here is one ad: </h1>

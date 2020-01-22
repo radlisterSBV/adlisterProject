@@ -13,6 +13,8 @@
     </jsp:include>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
 <h3>File Upload:</h3>
 Select a file to upload: <br />
 <div class="modal" tabindex="-1" role="dialog">
