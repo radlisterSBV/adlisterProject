@@ -33,6 +33,8 @@
                 </div>
             </c:if>
             <input id="password" name="password" class="form-control" type="password">
+            <label for="passwordConfirmation">Confirm Password</label>
+            <input id="passwordConfirmation" name="passwordConfirmation" class="form-control" type="password">
         </div>
         <div class="form-group">
         </div>
