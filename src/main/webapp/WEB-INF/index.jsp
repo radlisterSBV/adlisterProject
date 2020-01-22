@@ -6,9 +6,6 @@
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
 </head>
-    <video autoplay muted loop id="myVideo">
-        <source src="../backgroundVid.mp4" type="video/mp4">
-    </video>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="splash-container">
