@@ -14,7 +14,7 @@
         <c:forEach var="ad" items="${ads}">
 
         <c:if test="${ad.getUserId() == user.id}">
-        <form action="/ad" method="POST">
+        <form action="/ad" method="GET">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
