@@ -56,11 +56,3 @@ button {
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
 }
 
-#myVideo {
-    position: fixed!important;
-    right: 0!important;
-    bottom: 0!important;
-    min-width: 100%!important;
-    min-height: 100%!important;
-    z-index: -10000!important;
-}
