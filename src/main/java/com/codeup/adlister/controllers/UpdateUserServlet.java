@@ -23,9 +23,10 @@ public class UpdateUserServlet extends HttpServlet {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String passwordConfirmation = request.getParameter("passwordConfirmation");
         Long id = Long.parseLong(request.getParameter("userId"));
 
-        boolean passwordIssue = password.isEmpty();
+        boolean passwordIssue = password.isEmpty() || (! password.equals(passwordConfirmation));
 
         if (passwordIssue) {
             response.sendRedirect("/updateUser?errorPasswordIssue");
@@ -40,6 +41,9 @@ public class UpdateUserServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        request.getSession().removeAttribute("user");
+
+        request.getSession().setAttribute("user",newUser);
         response.sendRedirect("/profile");
     }
 }
