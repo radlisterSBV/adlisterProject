@@ -9,7 +9,7 @@
 <body>
 <%--<jsp:include page="/WEB-INF/partials/loggedInNavbar.jsp"/>--%>
 <%--i'm so stuck right here. this causes infinte recursion--%>
-<jsp:include page="${loggedInOut}"/>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
     </div>
