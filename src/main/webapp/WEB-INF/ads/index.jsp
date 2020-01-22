@@ -13,15 +13,13 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
 
-<img src="../../img/lawn_mower.png" alt="">
+<%--<img src="../../img/lawn_mower.png" alt="">--%>
 <h1>Here Are all the ads!</h1>
 <div class="container">
 
     <c:forEach var="ad" items="${ads}">
 
         <form action="/ad" method="GET">
-
-
 
             <a href="#" class="">
                 <div class="card" style="width: 18rem;">
