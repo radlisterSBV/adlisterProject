@@ -41,6 +41,9 @@ public class UpdateUserServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        request.getSession().removeAttribute("user");
+
+        request.getSession().setAttribute("user",newUser);
         response.sendRedirect("/profile");
     }
 }
