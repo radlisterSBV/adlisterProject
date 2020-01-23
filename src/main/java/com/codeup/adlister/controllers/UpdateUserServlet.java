@@ -44,7 +44,7 @@ public class UpdateUserServlet extends HttpServlet {
         }
         request.getSession().removeAttribute("user");
 
-        request.getSession().setAttribute("user",newUser);
+        request.getSession().setAttribute("user", newUser);
         response.sendRedirect("/profile");
     }
 }
