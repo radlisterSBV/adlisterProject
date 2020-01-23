@@ -20,9 +20,6 @@
             </c:if>
             <c:if test="${user != null}">
                 <li class="nav-item active">
-                    <a href="/ads"><img src="../../img/logo.png" class="small_icon"></a>
-                </li>
-                <li class="nav-item active">
                     <a class="nav-link" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
