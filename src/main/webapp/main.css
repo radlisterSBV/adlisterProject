@@ -5,6 +5,7 @@ form {
     align-items: center !important;
 }
 
+
 input {
     margin-bottom: 1rem !important;
     padding: .5rem !important;
@@ -26,6 +27,14 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+
+}
+
+.bg-img {
+    z-index: -100;
     width: 100%;
 }
 
@@ -55,6 +64,13 @@ button {
     padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
 }
+
+
+
+
+
+
+
 
 
 

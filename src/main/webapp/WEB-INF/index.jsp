@@ -3,7 +3,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
+        <jsp:param name="title" value="radlister.com" />
     </jsp:include>
 </head>
 <body>
@@ -12,7 +12,12 @@
         <img src="/img/logo.png" alt="company logo" class="logo-img">
         <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
 
+
+
+
     </div>
+
+
     <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>
