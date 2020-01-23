@@ -24,6 +24,7 @@ public class UpdateUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("passwordConfirmation");
+        String avatarImage = request.getParameter("avatar_img_url");
         Long id = Long.parseLong(request.getParameter("userId"));
 
         boolean passwordIssue = password.isEmpty() || (! password.equals(passwordConfirmation));
@@ -34,7 +35,7 @@ public class UpdateUserServlet extends HttpServlet {
         }
 
         User newUser = new User(
-                id, username, email, hash(password)
+                id, username, email, hash(password), avatarImage
         );
         try {
             DaoFactory.getUsersDao().updateUser(newUser);
