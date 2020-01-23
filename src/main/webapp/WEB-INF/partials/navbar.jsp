@@ -8,7 +8,7 @@
         <ul class="navbar-nav">
             <c:if test="${user == null}">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
@@ -19,7 +19,7 @@
             </c:if>
             <c:if test="${user != null}">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/ads/create">Create Ad</a>
