@@ -23,7 +23,7 @@
         <input id="username" name="username" class="form-control" type="text">
         <label for="password">Password</label>
         <input id="password" name="password" class="form-control" type="password">
-        <input type="submit" class="btn btn-primary btn-block" value="Log In">
+        <button type="submit" class="btn btn-primary btn-block w-25" value="Log In"> Log In</button>
         <img src="/img/hiking_bg.jpg" alt="bg-img" class="bg-img">
 
     </form>
