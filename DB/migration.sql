@@ -13,9 +13,6 @@ CREATE TABLE users (
     avatar_img_url VARCHAR(2045),
     PRIMARY KEY (id)
 );
-drop table ad_cat;
-drop table users;
-drop table ads;
 
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -28,17 +25,4 @@ CREATE TABLE ads (
         ON DELETE CASCADE
 );
 
-
-CREATE TABLE categories (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    category VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id)
-);
-
-CREATE TABLE ad_cat (
-    ad_id INT UNSIGNED NOT NULL,
-    cat_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY (ad_id) REFERENCES ads(id),
-    FOREIGN KEY (cat_id) REFERENCES categories(id)
-);
 

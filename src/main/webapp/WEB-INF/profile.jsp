@@ -10,8 +10,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <h1>Welcome, ${user.username}!</h1>
 
-
+<div class="profile-container">
 <img src="<c:url value="${user.getUrl()}" />"/>
+</div>
 
 
 <div class="card-container">
