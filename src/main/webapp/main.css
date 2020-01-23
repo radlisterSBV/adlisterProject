@@ -2,12 +2,16 @@ body {
     color: #667e35;
 }
 
+.navbarLinks {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
 
 #splash {
     height: 100vh;
 }
-
-
 form {
     width: 100% !important;
     display: flex !important;
@@ -75,7 +79,9 @@ button {
 .splash_img {
     width: 25%;
 }
-
+.small_icon {
+    width: 10%;
+}
 
 
 
