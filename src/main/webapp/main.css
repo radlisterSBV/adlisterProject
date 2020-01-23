@@ -1,10 +1,19 @@
+body {
+    color: #667e35;
+}
+
+
+#splash {
+    height: 100vh;
+}
+
+
 form {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
 }
-
 
 input {
     margin-bottom: 1rem !important;
@@ -30,7 +39,6 @@ button {
     width: 100%;
     position: fixed;
     z-index: 100;
-
 }
 
 .bg-img {
@@ -39,7 +47,7 @@ button {
 }
 
 .logo-img {
-    width: 30%;
+    width: 30vw;
 }
 
 .search-container {
@@ -63,6 +71,9 @@ button {
     border-radius: 5%;
     padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
+}
+.splash_img {
+    width: 25%;
 }
 
 
