@@ -34,17 +34,38 @@ public class UpdateUserServlet extends HttpServlet {
             return;
         }
 
-        User newUser = new User(
-                id, username, email, hash(password), avatarImage
-        );
-        try {
-            DaoFactory.getUsersDao().updateUser(newUser);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        request.getSession().removeAttribute("user");
+        if(request.getParameter("avatar_img_url") == null || request.getParameter("avatar_img_url").isEmpty())
+        {
+            String defaultAvatar = "https://ramcotubular.com/wp-content/uploads/default-avatar.jpg";
 
-        request.getSession().setAttribute("user", newUser);
-        response.sendRedirect("/profile");
+            User newUserNoImg = new User(
+                    id, username, email, hash(password), defaultAvatar
+            );
+            try {
+                DaoFactory.getUsersDao().updateUser(newUserNoImg);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            request.getSession().removeAttribute("user");
+
+            request.getSession().setAttribute("user", newUserNoImg);
+            response.sendRedirect("/profile");
+            return;
+        } else {
+            User newUserWImg = new User(
+                    id, username, email, hash(password), avatarImage
+            );
+            try {
+                DaoFactory.getUsersDao().updateUser(newUserWImg);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            request.getSession().removeAttribute("user");
+
+            request.getSession().setAttribute("user", newUserWImg);
+            response.sendRedirect("/profile");
+
+        }
+
     }
 }
