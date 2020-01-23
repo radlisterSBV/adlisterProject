@@ -13,7 +13,7 @@
         <h1>Please Log In</h1>
 
         <c:if test="${param.error != null}">
-            <div class="card w-100">
+            <div class="card w-100 error">
                 <div class="card-body text-danger">
                     Username or password incorrect. Please try again.
                 </div>

@@ -13,14 +13,14 @@
         <h1>Please fill in your information.</h1>
         <label for="username">Username</label>
         <c:if test="${param.errorUsernameEmpty != null}">
-            <div class="card w-100">
+            <div class="card w-100 error">
                 <div class="card-body text-danger">
                     Please enter a username
                 </div>
             </div>
         </c:if>
         <c:if test="${param.errorUsernameExists != null}">
-            <div class="card w-100">
+            <div class="card w-100 error">
                 <div class="card-body text-danger">
                     Username already exists
                 </div>
@@ -29,14 +29,14 @@
         <input id="username" name="username" class="form-control" type="text">
         <label for="email">Email</label>
         <c:if test="${param.errorEmailEmpty != null}">
-            <div class="card w-100">
+            <div class="card w-100 error">
                 <div class="card-body text-danger">
                     Please enter an email
                 </div>
             </div>
         </c:if>
         <c:if test="${param.errorEmailExists != null}">
-            <div class="card w-100">
+            <div class="card w-100 error">
                 <div class="card-body text-danger">
                     Account already attached to email entered
                 </div>
@@ -45,7 +45,7 @@
         <input id="email" name="email" class="form-control" type="text">
         <label for="password">Password</label>
         <c:if test="${param.errorPasswordIssue != null}">
-            <div class="card w-100">
+            <div class="card w-100 error">
                 <div class="card-body text-danger">
                     There was an issue with your password. Please try again.
                 </div>
