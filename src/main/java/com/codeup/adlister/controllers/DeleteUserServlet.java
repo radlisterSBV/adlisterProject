@@ -17,7 +17,7 @@ public class DeleteUserServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("userId"));
         DaoFactory.getUsersDao().deleteUser(id);
         request.getSession().removeAttribute("user");
-        response.sendRedirect("/");
+        response.sendRedirect("/home");
     }
 }
 

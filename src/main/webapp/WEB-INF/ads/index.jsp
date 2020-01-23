@@ -21,7 +21,7 @@
 
      <div class="card">
         <form action="/ad" method="GET">
-                <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
+                <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top alt="...">
                 <div class="card-body">
                         <p><c:out value="${ad.title}"/></p>
                     <input type="hidden" name="ad_id" value="${ad.id}">
