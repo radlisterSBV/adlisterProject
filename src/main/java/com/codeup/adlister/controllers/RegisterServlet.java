@@ -26,6 +26,8 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        String avatarImage = request.getParameter("avatar_img_url");
+
         User user = DaoFactory.getUsersDao().findByUsername(username);
         User userEmail = DaoFactory.getUsersDao().findByEmail(email);
 
@@ -66,8 +68,19 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
-        User newUser = new User(username, email, password);
-        DaoFactory.getUsersDao().insert(newUser);
-        response.sendRedirect("/login");
+        if(request.getParameter("avatar_img_url") == null || request.getParameter("avatar_img_url").isEmpty())
+        {
+            String defaultAvatar = "https://ramcotubular.com/wp-content/uploads/default-avatar.jpg";
+            User newUser = new User (username, email, password, defaultAvatar);
+            DaoFactory.getUsersDao().insert(newUser);
+            response.sendRedirect("/login");
+            return;
+        } else {
+            User newUser = new User(username, email, password, avatarImage);
+            DaoFactory.getUsersDao().insert(newUser);
+            response.sendRedirect("/login");
+
+        }
+
     }
 }

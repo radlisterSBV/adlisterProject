@@ -10,8 +10,12 @@ CREATE TABLE users (
     username VARCHAR(240) NOT NULL,
     email VARCHAR(240) NOT NULL,
     password LONGBLOB NOT NULL,
+    avatar_img_url VARCHAR(2045),
     PRIMARY KEY (id)
 );
+drop table ad_cat;
+drop table users;
+drop table ads;
 
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
