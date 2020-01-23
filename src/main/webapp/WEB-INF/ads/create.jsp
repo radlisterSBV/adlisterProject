@@ -16,7 +16,7 @@
             <label for="description">Description</label>
             <input id="description" name="description" class="form-control" type="text">
                 <label for="image">Image</label>
-                <input id="image" type="url" name="url">
+                <input id="image" type="text" name="url">
         <button type="submit" class="btn btn-block btn-primary">Create Ad</button>
     </form>
 
