@@ -91,13 +91,15 @@ public class MySQLUsersDao implements Users {
 
     @SuppressWarnings("DuplicatedCode")
     public void updateUser(User user) throws SQLException {
-        String query = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
+        String query = "UPDATE users SET username = ?, email = ?, password = ?, avatar_img_url = ? WHERE id = ?";
         PreparedStatement stmt = null;
         stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
         stmt.setString(1, user.getUsername());
         stmt.setString(2, user.getEmail());
         stmt.setString(3, user.getPassword());
-        stmt.setString(4, String.valueOf(user.getId()));
+        stmt.setString(4, user.getUrl());
+        stmt.setString(5, String.valueOf(user.getId()));
+
         stmt.executeUpdate();
         ResultSet rs = stmt.getGeneratedKeys();
         rs.next();
