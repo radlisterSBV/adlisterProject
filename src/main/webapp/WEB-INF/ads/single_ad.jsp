@@ -17,11 +17,9 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <h1>Here is one ad: </h1>
-
-    <div class="card-body">
+    <h1><c:out value="${ad.title}"/></h1>
+    <div class="singleAd-container">
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
-        <h4><c:out value="${ad.title}"/></h4>
         <p class="card-text"><c:out value="${ad.description}"/></p>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
@@ -34,7 +32,7 @@
 
             <!-- Modal -->
 
-            <button type="button" class="btn btn-black-50" data-toggle="modal" data-target="#deleteSingleAd">
+            <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#deleteSingleAd">
                 <i class="fas fa-trash-alt"></i>
             </button>
 

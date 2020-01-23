@@ -2,6 +2,16 @@ body {
     color: #667e35;
 }
 
+nav {
+    background-color: #667e35 !important;
+    color: #EDF3E0 !important;
+    overflow: visible !important;
+}
+
+.logo-container {
+    overflow: visible !important;
+}
+
 .navbarLinks {
     width: 100%;
     display: flex;
@@ -12,6 +22,7 @@ body {
 #splash {
     height: 100vh;
 }
+
 form {
     width: 100% !important;
     display: flex !important;
@@ -33,6 +44,12 @@ button {
     font-size: .8rem !important;
     border: none !important;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
+    background-color: #7aa066 !important;
+}
+
+.card button {
+    box-shadow: 0 0.1rem .5rem rgba(98, 98, 98, 0.5) !important;
+
 }
 
 .splash-container {
@@ -76,11 +93,27 @@ button {
     padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
 }
+
+.card img {
+    height: 200px;
+}
+
 .splash_img {
     width: 25%;
 }
+
 .small_icon {
     width: 10%;
+}
+
+.singleAd-container {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.singleAd-container img {
+    height: 50%;
+    width: 50%;
 }
 
 
