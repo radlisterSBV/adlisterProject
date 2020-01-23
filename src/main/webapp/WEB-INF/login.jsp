@@ -18,6 +18,7 @@
                     Username or password incorrect. Please try again.
                 </div>
             </div>
+
         </c:if>
         <label for="username">Username</label>
         <input id="username" name="username" class="form-control" type="text">
