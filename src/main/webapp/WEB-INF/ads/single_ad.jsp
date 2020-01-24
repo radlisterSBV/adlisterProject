@@ -13,28 +13,45 @@
         <jsp:param name="title" value="${ad.title}"/>
     </jsp:include>
     <script src="https://kit.fontawesome.com/927b51fa66.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("../../img/boat.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
-    <h1><c:out value="${ad.title}"/></h1>
-    <div class="singleAd-container">
+<div class="card-container-container mt-4">
+<div class="container form-bg new-ad single">
+    <div class="d-flex justify-content-center flex-column align-items-center">
+    <h1 class="display-4"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
-        <p class="card-text"><c:out value="${ad.description}"/></p>
+        <p class="card-text mt-3"><c:out value="${ad.description}"/></p>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
         <form action="/update" method="GET">
             <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="submit"><i class="far fa-edit"></i></button>
+            <button type="submit" class="mt-3"><i class="far fa-edit"></i></button>
         </form>
         <form action="/delete" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
+            <button type="button" class="btn btn-block btn-primary mt-n4" data-toggle="modal" data-target="#deleteSingleAd">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+
+
+
+
+
+
+
+
+
 
             <!-- Modal -->
 
-            <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#deleteSingleAd">
-                <i class="fas fa-trash-alt"></i>
-            </button>
 
 
             <div class="modal fade" tabindex="-1" role="dialog" id="deleteSingleAd" aria-hidden="true">
@@ -58,6 +75,7 @@
             </div>
         </form>
     </c:if>
+</div>
 </div>
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>

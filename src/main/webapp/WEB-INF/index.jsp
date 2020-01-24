@@ -5,9 +5,16 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="radlister.com" />
     </jsp:include>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("../img/rocksDark.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
+
 <body>
     <div id="splash">
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />

@@ -4,11 +4,18 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Create a new Ad"/>
     </jsp:include>
+    <style>
+        body {
+            background-image: url("../../img/hiking_bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container text-center">
+<div class="container text-center form-bg create-form">
     <form action="/ads/create" method="post">
     <h1>Create a new Ad</h1>
             <label for="title">Title</label>
