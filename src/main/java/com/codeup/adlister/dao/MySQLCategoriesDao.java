@@ -1,5 +1,28 @@
 
 
+/*ad--
+
+Long id = ad.getUserId();
+User user = DaoFactory.getUsersDao().findUserById(id);
+request.setAttribute("email", user.getEmail());
+
+${email}
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
