@@ -23,12 +23,14 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="card-container-container mt-4">
+<div class="card-container-container mt-4 mb-4">
 <div class="container form-bg new-ad single">
-    <div class="d-flex justify-content-center flex-column align-items-center">
-    <h1 class="display-4"><c:out value="${ad.title}"/></h1>
+    <div class="d-flex flex-column align-items-center single-ad-container">
+    <h1 class="display-2"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
         <p class="card-text mt-3"><c:out value="${ad.description}"/></p>
+<%--this does not work. only shows logged in user's email--%>
+        <%--        <p class="card-text"><c:out value="${user.email}"/></p>--%>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
         <form action="/update" method="GET">

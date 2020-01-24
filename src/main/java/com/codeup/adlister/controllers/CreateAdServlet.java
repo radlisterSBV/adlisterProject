@@ -45,7 +45,7 @@ public class CreateAdServlet extends HttpServlet {
 
         if(request.getParameter("url") == null || request.getParameter("url").isEmpty())
         {
-            String defaultUrl = "https://avatars0.githubusercontent.com/u/59981893?s=200&v=4";
+            String defaultUrl = "http://localhost:8080/img/logo.png";
             Ad ad = new Ad(
                     user.getId(),
                     request.getParameter("title"),

@@ -5,11 +5,20 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
+    <style>
+        body {
+            background-image: url("../../img/boat.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<h1>Here Are all the ads!</h1>
-<div class="search-container">
+<div class="search-div-container">
+<div class="search-results">
+<h1 class="display-4">Search results:</h1>
+    <div class="search-mid">
    <c:forEach var="ad" items="${searchResults}">
     <div class="card">
            <form action="/ad" method="GET">
@@ -22,6 +31,8 @@
             </form>
    </div>
    </c:forEach>
+    </div>
+</div>
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>
