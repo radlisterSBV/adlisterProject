@@ -5,10 +5,18 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!"/>
     </jsp:include>
+    <style>
+        body {
+            background-image: url("../img/snow-capped-mountains-under-the-cloudy-skies-1054289.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp"/>
-<div class="container mt-5 text-center">
+<div class="d-flex justify-content-center">
+<div class="container my-5 text-center container-card-container w-25">
     <form action="/register" method="post">
         <h1>Please fill in your information.</h1>
         <label for="username">Username</label>
@@ -60,7 +68,8 @@
 
     </form>
 </div>
-</body>
+</div>
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
+</body>
 
 </html>

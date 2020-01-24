@@ -140,9 +140,9 @@ button {
 
 
 .profile-container img{
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     height: 50%;
-    width: 120%;
+    width: 95%;
 
 }
 
@@ -239,6 +239,13 @@ button {
 .single-ad-container {
     justify-content: space-between;
 }
+.red-button {
+    background-color: darkred!important;
+}
+
+
+
+
 .search-results {
     min-width: 35%;
     max-width: 95%;
