@@ -25,9 +25,9 @@
                <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
                <div class="card-body">
                    <p><c:out value="${ad.title}"/></p>
-                   <div class="button-container">
+                   <div class="button-container w-100 d-flex justify-content-center">
                    <input type="hidden" name="ad_id" value="${ad.id}">
-                   <button type="submit">View Ad</button>
+                   <button type="submit" class="btn btn-primary">View Ad</button>
                    </div>
                </div>
             </form>
