@@ -72,7 +72,7 @@ public class CreateAdServlet extends HttpServlet {
 
 
 
-//        request.getSession().removeAttribute("newAd");
+//        request.getSession().removeA  ttribute("newAd");
     }
 
 
