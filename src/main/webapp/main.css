@@ -1,5 +1,6 @@
 body {
     color: #667e35;
+    background-color: #EDF3E0;
 }
 
 nav {
@@ -141,7 +142,30 @@ button {
     font-weight: bolder;
     text-shadow: 1px -1px 1px #EDF3E0;
 }
+.form-bg {
 
+    width: 30vw;
+    height: 65vh;
+    background-color: rgba(237,243,224,0.95);
+    padding: 2%;
+
+}
+.form-bg label:nth-child(2) {
+    margin-top: 15%;
+}
+.form-bg input {
+    width: 65%;
+}
+.form-container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+
+}
+.login-header {
+    margin-top: 5%;
+}
 
 
 
