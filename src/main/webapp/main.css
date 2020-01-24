@@ -130,7 +130,7 @@ button {
 .profile-container img{
     border-radius: 50%;
     height: 50%;
-    max-width: 120%;
+    width: 120%;
 
 }
 
@@ -172,6 +172,7 @@ button {
 
 .container-card-container {
     background-color: #EDF3E0;
+    min-width: 15%;
     max-width: 55%;
     border-radius: 5%;
     display: flex;
@@ -180,7 +181,6 @@ button {
     flex-direction: column;
     padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
-
 }
 
 .card-container-container {
@@ -249,4 +249,7 @@ button {
     display: flex;
     justify-content: center;
 
+}
+.update-class .form{
+    width: 25%;
 }
