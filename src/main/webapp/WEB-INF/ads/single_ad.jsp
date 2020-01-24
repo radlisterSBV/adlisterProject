@@ -29,8 +29,7 @@
     <h1 class="display-2"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
         <p class="card-text mt-3"><c:out value="${ad.description}"/></p>
-<%--this does not work. only shows logged in user's email--%>
-        <%--        <p class="card-text"><c:out value="${user.email}"/></p>--%>
+<%--        <p class="card-text"></p>--%>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
         <form action="/update" method="GET">

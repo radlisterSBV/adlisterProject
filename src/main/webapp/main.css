@@ -23,6 +23,7 @@ nav {
 
 #splash {
     height: 100vh;
+    width: 100vw;
 }
 
 form {
@@ -138,7 +139,9 @@ button {
     font-family: 'Exo 2', sans-serif;
     margin-top: 1%;
     font-weight: bolder;
-    text-shadow: 1px -1px 1px #EDF3E0;
+    /*text-shadow: 1px -1px 1px #EDF3E0;*/
+
+
 }
 .form-bg {
     min-width: 30vw;
