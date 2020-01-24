@@ -1,5 +1,6 @@
 body {
     color: #667e35;
+    font-family: 'Exo 2', sans-serif;
     background-color: #EDF3E0;
 }
 
@@ -93,6 +94,7 @@ button {
     border-radius: 5%;
     padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
+    background-color: #EDF3E0;
 }
 
 .card img {
@@ -106,17 +108,14 @@ button {
 .small_icon {
     width: 90%;
 }
-
 .singleAd-container {
     max-width: 80vw;
     max-height: 80vh;
 }
-
 .singleAd-container img {
     height: 50%;
     width: 50%;
 }
-
 .error {
     height: auto;
 }
@@ -131,11 +130,10 @@ button {
 .profile-container img{
     border-radius: 50%;
     height: 50%;
+    max-width: 120%;
 
 }
-.profile-container {
-    width: 20%;
-}
+
 .catch-phrase {
     font-family: 'Exo 2', sans-serif;
     margin-top: 1%;
@@ -167,7 +165,21 @@ button {
     margin-top: 5%;
 }
 
+.body-div {
+    display: flex;
+    justify-content: center;
+}
 
+.container-card-container {
+    background-color: #EDF3E0;
+    max-width: 55%;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
 
-
+}
 
