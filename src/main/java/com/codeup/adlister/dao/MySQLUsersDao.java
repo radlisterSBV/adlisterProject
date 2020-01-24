@@ -21,8 +21,25 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
-
-
+    public User findUserById(Long id) {
+        try {
+            String query = "SELECT * from users WHERE id = ? LIMIT 1";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, String.valueOf(id));
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            //create the entire ad object
+            return new User(
+                    rs.getLong("id"),
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("password"),
+                    rs.getString("avatar_img_url")
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding individual ad with ad_id of " + id);
+        }
+    }
     @Override
     public User findByUsername(String username) {
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";

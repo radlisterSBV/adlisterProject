@@ -20,7 +20,10 @@ public class ViewAdServlet extends HttpServlet {
             throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
             request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(Long.parseLong(request.getParameter("ad_id"))));
+
             Ad ad = (Ad) request.getAttribute("ad");
+            Long id = ad.getUserId();
+            request.setAttribute("email", DaoFactory.getUsersDao().findUserById(id).getEmail());
             request.getRequestDispatcher("/WEB-INF/ads/single_ad.jsp").forward(request, response);
             request.getSession().setAttribute("ad", ad);
         } else {

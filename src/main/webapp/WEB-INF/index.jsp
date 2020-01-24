@@ -20,9 +20,7 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <%--        <h3 class="catch-phrase">Where you go to pack your bag.</h3>--%>
         <div class="splash-container d-flex">
-            <img src="/img/logo-circle.png" id="circle" alt="company logo" class="logo-img splash_img mt-5 mb-5">
-            <img src="/img/inner-rings.png" id="inner" alt="inner-rings">
-            <img src="/img/outer-rings.png" id="outer" alt="outer-rings">
+            <img src="/img/logo.png" id="circle" alt="company logo" class="logo-img splash_img mt-5 mb-5">
             <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
         </div>
     </div>
