@@ -20,7 +20,7 @@
 <h1 class="display-4">Search results:</h1>
     <div class="search-mid">
    <c:forEach var="ad" items="${searchResults}">
-    <div class="card">
+    <div class="card small-card">
            <form action="/ad" method="GET">
                <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
                <div class="card-body">
