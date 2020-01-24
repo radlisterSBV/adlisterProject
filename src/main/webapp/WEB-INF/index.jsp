@@ -5,6 +5,8 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="radlister.com" />
     </jsp:include>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="splash">
@@ -12,8 +14,9 @@
         <div class="splash-container">
             <img src="/img/logo.png" alt="company logo" class="logo-img splash_img mt-5 mb-5">
             <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
+        <h3 class="catch-phrase">Where you go to pack your bag.</h3>
         </div>
-        <jsp:include page="/WEB-INF/partials/scripts.jsp" />
     </div>
+        <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>

@@ -10,8 +10,42 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <h1>Welcome, ${user.username}!</h1>
 
-<div class="profile-container">
-<img src="<c:url value="${user.getUrl()}" />"/>
+
+
+<div class="profile-container card">
+    <img src="<c:url value="${user.getUrl()}" />" alt="profile image"/>
+    <c:out value="${user.getEmail()}" />
+    <div>
+        <form action="/updateUser" method="GET">
+            <input type="hidden" name="userId" value="${user.id}">
+            <button type="submit"><i class="far fa-edit"></i>UPDATE PROFILE</button>
+        </form>
+        <form action="/deleteUser" method="POST">
+            <input type="hidden" name="userId" value="${user.id}">
+            <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-trash-alt"></i> DELETE PROFILE
+            </button>
+            <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Are you sure you want to delete your account?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>This will also delete all of your ads.</h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
+                            <button type="submit" class="btn btn-danger">DELETE ACCOUNT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 
@@ -33,38 +67,7 @@
     </c:forEach>
 </div>
 
-<div>
-    <form action="/updateUser" method="GET">
-        <input type="hidden" name="userId" value="${user.id}">
-        <button type="submit"><i class="far fa-edit"></i>UPDATE PROFILE</button>
-    </form>
-    <form action="/deleteUser" method="POST">
 
-        <input type="hidden" name="userId" value="${user.id}">
-        <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
-            <i class="fas fa-trash-alt"></i> DELETE PROFILE
-        </button>
-        <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Are you sure you want to delete your account?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h6>This will also delete all of your ads.</h6>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
-                        <button type="submit" class="btn btn-danger">DELETE ACCOUNT</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
 
 
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
