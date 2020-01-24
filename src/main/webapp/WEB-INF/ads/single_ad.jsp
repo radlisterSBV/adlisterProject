@@ -24,7 +24,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="d-flex justify-content-center">
-<div class="card card-container-container mt-4 mb-4">
+<div class="card card-container-container">
     <div class="d-flex flex-column align-items-center single-ad-container">
     <h1 class="display-4"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
@@ -32,8 +32,8 @@
 <%--        <p class="card-text"></p>--%>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
-        <div class="d-flex justify-content-center align-items-center flex-column w-100">
-            <div class="w-50">
+        <div class="d-flex justify-content-between align-items-center flex-column w-100">
+            <div class="d-flex justify-content-between align-items-center flex-column w-50">
         <form action="/update" method="GET">
             <input type="hidden" name="ad_id" value="${ad.id}">
             <button type="submit" class="btn btn-primary mt-3 w-25"><i class="far fa-edit"></i> EDIT</button>

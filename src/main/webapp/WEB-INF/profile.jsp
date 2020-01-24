@@ -69,7 +69,7 @@
         <div class="card-container">
             <c:forEach var="ad" items="${ads}">
                 <c:if test="${ad.getUserId() == user.id}">
-                    <div class="card">
+                    <div class="card small-card">
                         <form action="/ad" method="GET">
                             <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
                             <div class="card-body">
