@@ -10,7 +10,6 @@
             background-image: url("../img/mountains2.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-
         }
 
     </style>
@@ -26,11 +25,11 @@
             <p class="mt-n3 mb-4"><i class="fas fa-envelope"></i>: <c:out value="${user.getEmail()}" /></p>
             <form action="/updateUser" method="GET" class="mt-n3">
                 <input type="hidden" name="userId" value="${user.id}">
-                <button type="submit" class="mb-n2"><i class="far fa-edit"></i>UPDATE PROFILE</button>
+                <button type="submit" class="btn btn-primary mb-n2"><i class="far fa-edit"></i>UPDATE PROFILE</button>
             </form>
             <form action="/deleteUser" method="POST">
                 <input type="hidden" name="userId" value="${user.id}">
-                <button type="button" class="button mb-n2" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary button mb-n2 red-button" data-toggle="modal" data-target="#exampleModal">
                     <i class="fas fa-trash-alt"></i> DELETE PROFILE
                 </button>
                 <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
@@ -47,7 +46,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
-                                <button type="submit" class="btn btn-danger">DELETE ACCOUNT</button>
+                                <button type="submit" class="btn btn-danger red-button">DELETE ACCOUNT</button>
                             </div>
                         </div>
                     </div>
@@ -58,12 +57,13 @@
     </div>
 
     <div class="container-card-container card-container mt-2 mb-2 w-66">
-        <c:if test="${ads.size() == 0}">
-        <h1 class="display-3">Welcome, <c:out value="${user.username}"/>.</h1>
+        <c:choose>
+        <c:when test="${newAd == null}">
+        <h1 class="display-4">Welcome, <c:out value="${user.username}"/>.</h1>
             <h2>You haven't created any ads yet!</h2>
             <h2>Click "Create Ad" above to begin!</h2>
-        </c:if>
-        <c:if test="${ads.size() > 0}">
+        </c:when>
+        <c:otherwise>
             <h1 class="display-3">Welcome, <c:out value="${user.username}"/>.</h1>
             <h4 class="display-4">Here are your ads:</h4>
         <div class="card-container">
@@ -74,9 +74,9 @@
                             <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p><c:out value="${ad.title}"/></p>
-                                <div class="button-container">
+                                <div class="button-container d-flex justify-content-center">
                                 <input type="hidden" name="ad_id" value="${ad.id}">
-                                <button type="submit">View Ad</button>
+                                <button type="submit" class="btn btn-primary">View Ad</button>
                                 </div>
                             </div>
                         </form>
@@ -85,7 +85,8 @@
             </c:forEach>
         </div>
 
-        </c:if>
+        </c:otherwise>
+        </c:choose>
 
     </div>
 </div>

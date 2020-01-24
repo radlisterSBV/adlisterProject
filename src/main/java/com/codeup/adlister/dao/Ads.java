@@ -16,4 +16,5 @@ public interface Ads {
     Ad findAdById(Long id);
     void deleteAd(Long id);
     void updateAdById(Ad ad) throws SQLException;
+    Ad findAdByUserId(Long id);
 }

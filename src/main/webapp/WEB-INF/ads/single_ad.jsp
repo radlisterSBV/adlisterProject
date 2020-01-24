@@ -26,20 +26,22 @@
 <div class="d-flex justify-content-center">
 <div class="card card-container-container mt-4 mb-4">
     <div class="d-flex flex-column align-items-center single-ad-container">
-    <h1 class="display-2"><c:out value="${ad.title}"/></h1>
+    <h1 class="display-4"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
         <p class="card-text mt-3"><c:out value="${ad.description}"/></p>
 <%--        <p class="card-text"></p>--%>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
+        <div class="d-flex justify-content-center align-items-center flex-column w-100">
+            <div class="w-50">
         <form action="/update" method="GET">
             <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="submit" class="btn btn-block btn-primary mt-3"><i class="far fa-edit"></i></button>
+            <button type="submit" class="btn btn-primary mt-3 w-25"><i class="far fa-edit"></i> EDIT</button>
         </form>
         <form action="/delete" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="button" class="btn btn-block btn-primary mt-n4" data-toggle="modal" data-target="#deleteSingleAd">
-                <i class="fas fa-trash-alt"></i>
+            <button type="button" class="btn btn-primary mt-n4 w-25 red-button" data-toggle="modal" data-target="#deleteSingleAd">
+                <i class="fas fa-trash-alt"></i> DELETE
             </button>
 
 
@@ -76,6 +78,8 @@
             </div>
         </form>
     </c:if>
+</div>
+        </div>
 </div>
 </div>
 </div>

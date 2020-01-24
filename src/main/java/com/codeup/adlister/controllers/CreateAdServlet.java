@@ -53,7 +53,7 @@ public class CreateAdServlet extends HttpServlet {
                     defaultUrl
             );
             DaoFactory.getAdsDao().insert(ad);
-            response.sendRedirect("/ads");
+            response.sendRedirect("/profile");
 
             return;
         } else {
@@ -64,7 +64,7 @@ public class CreateAdServlet extends HttpServlet {
                     request.getParameter("url")
             );
             DaoFactory.getAdsDao().insert(ad);
-            response.sendRedirect("/ads");
+            response.sendRedirect("/profile");
 
 
         }
