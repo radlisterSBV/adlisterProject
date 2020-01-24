@@ -6,19 +6,28 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
+    <style>
+        body {
+            background-image: url("../../img/kayak2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <%--<img src="../../img/lawn_mower.png" alt="">--%>
-<h1 class="text-center">Here Are all the ads!</h1>
-<div class="card-container">
+<div class="search-div-container mb-3 mt-3">
+<div class="search-results">
+<h1 class="display-4 text-center">Find what you're seeking:</h1>
 <jsp:include page="/WEB-INF/partials/searchBar.jsp"/>
-</div>
-<div class="card-container">
 
+
+
+<h2 class="display-4 mb-n3">Or, browse all ads:</h2>
+<div class="search-mid">
     <c:forEach var="ad" items="${ads}">
-
      <div class="card">
         <form action="/ad" method="GET">
                 <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
@@ -30,9 +39,8 @@
         </form>
      </div>
     </c:forEach>
-
     <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
-
+    </div>
 </div>
 
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>

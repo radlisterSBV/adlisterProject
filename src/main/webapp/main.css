@@ -23,6 +23,7 @@ nav {
 
 #splash {
     height: 100vh;
+    width: 100vw;
 }
 
 form {
@@ -130,7 +131,7 @@ button {
 .profile-container img{
     border-radius: 50%;
     height: 50%;
-    max-width: 120%;
+    width: 120%;
 
 }
 
@@ -138,14 +139,16 @@ button {
     font-family: 'Exo 2', sans-serif;
     margin-top: 1%;
     font-weight: bolder;
-    text-shadow: 1px -1px 1px #EDF3E0;
+    /*text-shadow: 1px -1px 1px #EDF3E0;*/
+
+
 }
 .form-bg {
-
-    width: 30vw;
+    min-width: 30vw;
     min-height: 65vh;
     background-color: rgba(237,243,224,0.95);
     padding: 2%;
+    max-width: 45vw;
 
 }
 .form-bg label:nth-child(2) {
@@ -172,6 +175,7 @@ button {
 
 .container-card-container {
     background-color: #EDF3E0;
+    min-width: 15%;
     max-width: 55%;
     border-radius: 5%;
     display: flex;
@@ -180,7 +184,6 @@ button {
     flex-direction: column;
     padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
-
 }
 
 .card-container-container {
@@ -195,10 +198,8 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
     box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
-    min-width: 15%;
-    min-height: 75vh;
+    background-color: rgba(237,243,224,0.95);
 }
 .single h1{
 
@@ -223,4 +224,35 @@ button {
 .create-form button {
     width: 65%;
     margin-top: 2%;
+}
+.single-ad-container {
+    justify-content: space-between;
+}
+.search-results {
+    min-width: 35%;
+    max-width: 95%;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0.1rem 1.4rem rgba(98, 98, 98, 0.5);
+    background-color: rgba(237,243,224,0.95);
+}
+.search-results h1{
+    margin-top: 2%;
+}
+.search-div-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.search-mid {
+    min-width: 55vw;
+    display: flex;
+    justify-content: center;
+
+}
+.update-class .form{
+    width: 25%;
 }
