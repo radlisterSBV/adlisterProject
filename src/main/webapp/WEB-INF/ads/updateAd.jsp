@@ -26,7 +26,7 @@
             <label for="image">Image</label>
             <input id="image" name="url" class="form-control" type="text" value="${ad.url}">
             <input type="hidden" value="${ad.id}" name="ad_id">
-        <input type="submit" class="btn btn-block btn-primary">
+        <button type="submit" class="btn btn-block btn-primary">Update</button>
     </form>
 </div>
 </div>

@@ -33,8 +33,10 @@
                 <img src="<c:url value="${ad.getUrl()}"/>" class="card-img-top" alt="...">
                 <div class="card-body">
                         <p><c:out value="${ad.title}"/></p>
+                    <div class="button-container">
                     <input type="hidden" name="ad_id" value="${ad.id}">
-                    <button class="btn btn-block btn-primary" type="submit">View Ad</button>
+                    <button class="btn btn-block btn-primary text-light" type="submit">View Ad</button>
+                    </div>
                 </div>
         </form>
      </div>

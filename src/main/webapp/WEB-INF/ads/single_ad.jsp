@@ -23,8 +23,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="card-container-container mt-4 mb-4">
-<div class="container form-bg new-ad single">
+<div class="d-flex justify-content-center">
+<div class="card card-container-container mt-4 mb-4">
     <div class="d-flex flex-column align-items-center single-ad-container">
     <h1 class="display-2"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
@@ -34,7 +34,7 @@
     <c:if test="${ad.getUserId() == user.id}">
         <form action="/update" method="GET">
             <input type="hidden" name="ad_id" value="${ad.id}">
-            <button type="submit" class="mt-3"><i class="far fa-edit"></i></button>
+            <button type="submit" class="btn btn-block btn-primary mt-3"><i class="far fa-edit"></i></button>
         </form>
         <form action="/delete" method="POST">
             <input type="hidden" name="ad_id" value="${ad.id}">
@@ -76,6 +76,7 @@
             </div>
         </form>
     </c:if>
+</div>
 </div>
 </div>
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
