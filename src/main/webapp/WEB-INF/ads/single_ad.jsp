@@ -29,6 +29,7 @@
     <h1 class="display-4"><c:out value="${ad.title}"/></h1>
         <img src="<c:url value="${ad.getUrl()}"/>" alt="plz"/>
         <p class="card-text mt-3"><c:out value="${ad.description}"/></p>
+        <p>Contact: <c:out value="${email}"/></p>
 <%--        <p class="card-text"></p>--%>
     </div>
     <c:if test="${ad.getUserId() == user.id}">
