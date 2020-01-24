@@ -136,8 +136,10 @@ button {
     width: 20%;
 }
 .catch-phrase {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     margin-top: 1%;
+    font-weight: bolder;
+    text-shadow: 1px -1px 1px #EDF3E0;
 }
 
 
